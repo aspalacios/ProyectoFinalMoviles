@@ -5,7 +5,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 
 public class Api {
-    private final static String URL = "https://bodymassapp.herokuapp.com/api/";
+    private final static String URL = "https://body-mass-index-api.herokuapp.com/api/";
 
     public static ApiInterface instance() {
         Retrofit retrofit = new Retrofit.Builder()
