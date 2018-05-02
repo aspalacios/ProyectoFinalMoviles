@@ -9,7 +9,7 @@
 
     <EditText
         android:id="@+id/editFirstNameRegister"
-        android:layout_width="250dp"
+        android:layout_width="300dp"
         android:layout_height="40dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
@@ -24,7 +24,7 @@
 
     <EditText
         android:id="@+id/editLastNameRegister"
-        android:layout_width="250dp"
+        android:layout_width="300dp"
         android:layout_height="40dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
@@ -39,9 +39,11 @@
 
     <EditText
         android:id="@+id/editUsernameRegister"
-        android:layout_width="250dp"
+        android:layout_width="300dp"
         android:layout_height="40dp"
-        android:layout_centerInParent="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="245dp"
         android:background="#11000000"
         android:drawableLeft="@drawable/ic_action_person"
         android:ems="10"
@@ -52,11 +54,11 @@
 
     <EditText
         android:id="@+id/editPasswordRegister"
-        android:layout_width="250dp"
+        android:layout_width="300dp"
         android:layout_height="40dp"
-        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="123dp"
+        android:layout_marginTop="308dp"
         android:background="#11000000"
         android:drawableLeft="@drawable/ic_action_password"
         android:ems="10"
@@ -66,11 +68,11 @@
 
     <EditText
         android:id="@+id/editEmailRegister"
-        android:layout_width="250dp"
+        android:layout_width="300dp"
         android:layout_height="40dp"
-        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="185dp"
+        android:layout_marginTop="371dp"
         android:background="#11000000"
         android:drawableLeft="@drawable/ic_action_email"
         android:ems="10"

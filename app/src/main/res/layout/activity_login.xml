@@ -9,7 +9,7 @@
 
     <EditText
         android:id="@+id/editUsernameLogin"
-        android:layout_width="275dp"
+        android:layout_width="300dp"
         android:layout_height="55dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
@@ -25,7 +25,7 @@
 
     <EditText
         android:id="@+id/editPasswordLogin"
-        android:layout_width="275dp"
+        android:layout_width="300dp"
         android:layout_height="55dp"
         android:layout_centerInParent="true"
         android:background="#11000000"
@@ -38,7 +38,7 @@
 
     <Button
         android:id="@+id/btnAccessLogin"
-        android:layout_width="275dp"
+        android:layout_width="300dp"
         android:layout_height="55dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
@@ -50,7 +50,7 @@
 
     <Button
         android:id="@+id/btnRegisterLogin"
-        android:layout_width="275dp"
+        android:layout_width="300dp"
         android:layout_height="55dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
@@ -62,7 +62,7 @@
 
     <TextView
         android:id="@+id/tvTitle"
-        android:layout_width="187dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
