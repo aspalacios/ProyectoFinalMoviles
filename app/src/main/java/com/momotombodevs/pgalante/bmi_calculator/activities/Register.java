@@ -38,7 +38,7 @@ public class Register extends AppCompatActivity {
                 if (!email.getText().toString().trim().isEmpty()) {
                     if (!password.getText().toString().trim().isEmpty()) {
                         createUser();
-                        startActivity(new Intent(this, MainActivity.class));
+                        startActivity(new Intent(this, Index.class));
                         finish();
                     } else {
                         password.setError("Campo de contraseña vacío");
@@ -52,6 +52,7 @@ public class Register extends AppCompatActivity {
         } else {
             firstName.setError("Campo de nombre vacío");
         }
+
     }
 
     public void initializeViews() {
@@ -99,7 +100,5 @@ public class Register extends AppCompatActivity {
 
     public void acceptOnclick(View view) {
         validateData();
-        Intent intentIndex = new Intent(this, Index.class);
-        this.startActivity(intentIndex);
     }
 }

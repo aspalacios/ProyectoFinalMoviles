@@ -8,6 +8,7 @@ public class UserModel {
     private String id;
     private String email;
     private String username;
+    private String token;
 
     //Getters y setters modelo de usuario
 
@@ -59,4 +60,11 @@ public class UserModel {
         this.username = username;
     }
 
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
 }

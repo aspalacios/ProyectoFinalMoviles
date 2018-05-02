@@ -2,6 +2,7 @@ package com.momotombodevs.pgalante.bmi_calculator.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -10,9 +11,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
+import com.momotombodevs.pgalante.bmi_calculator.Api.ApiInterface;
 import com.momotombodevs.pgalante.bmi_calculator.R;
 import com.momotombodevs.pgalante.bmi_calculator.adapters.UserAdapter;
+import com.momotombodevs.pgalante.bmi_calculator.models.LoginModel;
 import com.momotombodevs.pgalante.bmi_calculator.models.UserModel;
 import com.momotombodevs.pgalante.bmi_calculator.Api.Api;
 
@@ -24,15 +29,27 @@ import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
-    private final String title = "User List";
-    private RecyclerView recyclerView;
+    private UserModel user;
+    private EditText username;
+    private EditText password;
+    private String usernameModel;
+    private String passwordModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
+        initializeViews();
         Button btnRegisterLogin = findViewById(R.id.btnRegisterLogin);
+        Button btnAccessLogin = findViewById(R.id.btnAccessLogin);
+
+
+
+        btnAccessLogin.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                login();
+            }
+        });
 
         btnRegisterLogin.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -43,15 +60,65 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    private void validateData() {
+
+        if (!username.getText().toString().trim().isEmpty()) {
+            if (!password.getText().toString().trim().isEmpty()) {
+                startActivity(new Intent(this, Index.class));
+                finish();
+            } else {
+                password.setError("Campo de contraseña vacío");
+            }
+        } else {
+            username.setError("Campo de nombre de usuario vacío");
+        }
+    }
+
+    public void initializeViews() {
+        username = findViewById(R.id.editUsernameLogin);
+        password = findViewById(R.id.editPasswordLogin);
+    }
+
+    private void login() {
+        user = new UserModel();
+
+        user.setUsername(username.getText().toString());
+        user.setPassword(username.getText().toString());
+        usernameModel = username.getText().toString();
+        passwordModel = password.getText().toString();
+
+        LoginModel loginModel = new LoginModel(usernameModel, passwordModel);
+        Call<UserModel> call = Api.instance().login(loginModel);
+
+        call.enqueue(new Callback<UserModel>() {
+            @Override
+            public void onResponse(@NonNull Call<UserModel> call, @NonNull Response<UserModel> response) {
+                if (response.isSuccessful()) {
+                    Toast.makeText(MainActivity.this, response.body().getToken(), Toast.LENGTH_SHORT).show();
+
+                }
+                else {
+                    Toast.makeText(MainActivity.this, "error :(",Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<UserModel> call, @NonNull Throwable t) {
+                Toast.makeText(MainActivity.this, "error :)",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+    }
+
     private void initViews() {
-        recyclerView = findViewById(R.id.recycler_view);
+        //recyclerView = findViewById(R.id.recycler_view);
     }
 
     private void configureRecyclerView() {
-        recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+        //recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
     }
 
-    private void getProducts (){
+    private void getProducts() {
         /*Call<ArrayList<UserModel>> call = Api.instance().getUser();
         call.enqueue(new Callback<ArrayList<UserModel>>() {
             @Override
