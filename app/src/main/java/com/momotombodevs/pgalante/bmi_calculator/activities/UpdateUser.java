@@ -40,7 +40,6 @@ public class UpdateUser extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_update_user);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle(title);
         setSupportActionBar(toolbar);
@@ -63,15 +62,7 @@ public class UpdateUser extends AppCompatActivity {
     }
 
     public void initializeViews() {
-        firstName = findViewById(R.id.firstNameEditText);
-        lastName = findViewById(R.id.lastNameEditText);
-        email = findViewById(R.id.emailEditText);
-        password = findViewById(R.id.passwordEditText);
 
-        firstName.setHint(userFirstName);
-        lastName.setHint(userLastName);
-        email.setHint(userEmail);
-        password.setHint(userPassword);
     }
 
     public void updateUser() {

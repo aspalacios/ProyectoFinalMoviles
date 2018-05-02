@@ -41,16 +41,16 @@ public class Register extends AppCompatActivity {
                         startActivity(new Intent(this, MainActivity.class));
                         finish();
                     } else {
-                        password.setError("This field can not be blank");
+                        password.setError("Campo de contraseña vacío");
                     }
                 } else {
-                    email.setError("This field can not be blank");
+                    email.setError("Campo de correo electrónico vacío");
                 }
             } else {
-                lastName.setError("This field can not be blank");
+                lastName.setError("Campo de apellido vacío");
             }
         } else {
-            firstName.setError("This field can not be blank");
+            firstName.setError("Campo de nombre vacío");
         }
     }
 
@@ -99,5 +99,7 @@ public class Register extends AppCompatActivity {
 
     public void acceptOnclick(View view) {
         validateData();
+        Intent intentIndex = new Intent(this, Index.class);
+        this.startActivity(intentIndex);
     }
 }

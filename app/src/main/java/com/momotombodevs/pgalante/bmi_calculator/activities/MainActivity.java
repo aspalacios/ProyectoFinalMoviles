@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void getProducts (){
-        Call<ArrayList<UserModel>> call = Api.instance().getUser();
+        /*Call<ArrayList<UserModel>> call = Api.instance().getUser();
         call.enqueue(new Callback<ArrayList<UserModel>>() {
             @Override
             public void onResponse(Call<ArrayList<UserModel>> call, Response<ArrayList<UserModel>> response) {
@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
             public void onFailure(Call<ArrayList<UserModel>> call, Throwable t) {
                 Log.i("Debug: ", t.getMessage());
             }
-        });
+        });*/
     }
 
     @Override

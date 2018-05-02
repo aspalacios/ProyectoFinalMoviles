@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient"
+    tools:context=".activities.Index">
+
+    <Button
+        android:id="@+id/btnCalculate"
+        android:layout_width="275dp"
+        android:layout_height="55dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="110dp"
+        android:background="@drawable/button_rounded_corner"
+        android:text="Calcular"
+        android:textAllCaps="false"
+        android:textColor="@color/colorHint" />
+
+    <EditText
+        android:id="@+id/editHeight"
+        android:layout_width="275dp"
+        android:layout_height="55dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="200dp"
+        android:background="#11000000"
+        android:drawableLeft="@drawable/ic_action_height"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Altura en cm"
+        android:inputType="numberDecimal"
+        android:textColor="@color/colorHint"
+        android:textSize="16dp" />
+
+    <EditText
+        android:id="@+id/editWeight"
+        android:layout_width="275dp"
+        android:layout_height="55dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="170dp"
+        android:background="#11000000"
+        android:drawableLeft="@drawable/ic_action_weight"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Peso en kg"
+        android:inputType="numberDecimal"
+        android:textColor="@color/colorHint"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/tvTitleIndex"
+        android:layout_width="187dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="84dp"
+        android:text="Calcula tu masa corporal"
+        android:textAlignment="center"
+        android:textColor="@color/colorHint"
+        android:textSize="25dp" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:drawableLeft="@drawable/ic_action_update"
+        android:layout_alignParentTop="true" />
+
+
+</RelativeLayout>
