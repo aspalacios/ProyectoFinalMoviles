@@ -7,6 +7,7 @@ public class UserModel {
     private String password;
     private String id;
     private String email;
+    private String username;
 
     //Getters y setters modelo de usuario
 
@@ -49,4 +50,13 @@ public class UserModel {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
 }

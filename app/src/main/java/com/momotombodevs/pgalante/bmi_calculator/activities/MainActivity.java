@@ -1,13 +1,15 @@
 package com.momotombodevs.pgalante.bmi_calculator.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 import com.momotombodevs.pgalante.bmi_calculator.R;
 import com.momotombodevs.pgalante.bmi_calculator.adapters.UserAdapter;
@@ -29,6 +31,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        Button btnRegisterLogin = findViewById(R.id.btnRegisterLogin);
+
+        btnRegisterLogin.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intentRegister = new Intent(MainActivity.this, Register.class);
+                MainActivity.this.startActivity(intentRegister);
+            }
+        });
 
     }
 
