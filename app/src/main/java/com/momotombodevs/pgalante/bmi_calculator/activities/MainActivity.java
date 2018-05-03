@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
         btnAccessLogin.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                login();
+                validateData();
             }
         });
 
@@ -64,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (!username.getText().toString().trim().isEmpty()) {
             if (!password.getText().toString().trim().isEmpty()) {
+                login();
                 startActivity(new Intent(this, Index.class));
                 finish();
             } else {
@@ -95,9 +96,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(@NonNull Call<LoginResult> call, @NonNull Response<LoginResult> response) {
                 if (response.isSuccessful()) {
-                    Toast.makeText(MainActivity.this, response.body().getId(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Bienvenido", Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(MainActivity.this, loginModel.getUsername() + ' ' + loginModel.getPassword(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Petición denegada", Toast.LENGTH_SHORT).show();
                 }
             }
 
