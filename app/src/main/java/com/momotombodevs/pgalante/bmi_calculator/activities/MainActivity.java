@@ -62,13 +62,11 @@ public class MainActivity extends AppCompatActivity {
 
     private void validateData() {
 
-        if (!username.getText().toString().trim().isEmpty()) {
-            if (!password.getText().toString().trim().isEmpty()) {
-                login();
-            } else {
-                password.setError("Campo de contraseña vacío");
-            }
-        } else {
+        if (!username.getText().toString().trim().isEmpty() && !password.getText().toString().trim().isEmpty()) {
+            login();
+        } else if (password.getText().toString().trim().isEmpty()) {
+            password.setError("Campo de contraseña vacío");
+        } else if (username.getText().toString().trim().isEmpty()) {
             username.setError("Campo de nombre de usuario vacío");
         }
     }
@@ -98,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
                     Intent loginIntent = new Intent(MainActivity.this, Index.class);
                     startActivity(loginIntent);
                 } else {
-                    Toast.makeText(MainActivity.this, "Petición denegada", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Datos Incorrectos", Toast.LENGTH_LONG).show();
                 }
             }
 
@@ -110,51 +108,4 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void initViews() {
-        //recyclerView = findViewById(R.id.recycler_view);
-    }
-
-    private void configureRecyclerView() {
-        //recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-    }
-
-    private void getProducts() {
-        /*Call<ArrayList<UserModel>> call = Api.instance().getUser();
-        call.enqueue(new Callback<ArrayList<UserModel>>() {
-            @Override
-            public void onResponse(Call<ArrayList<UserModel>> call, Response<ArrayList<UserModel>> response) {
-                if(response.body() != null){
-                    UserAdapter userAdapter = new UserAdapter(response.body());
-                    recyclerView.setAdapter(userAdapter);
-                }
-            }
-
-            @Override
-            public void onFailure(Call<ArrayList<UserModel>> call, Throwable t) {
-                Log.i("Debug: ", t.getMessage());
-            }
-        });*/
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item_product clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
 }
