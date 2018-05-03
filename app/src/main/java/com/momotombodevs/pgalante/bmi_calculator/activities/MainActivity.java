@@ -65,8 +65,6 @@ public class MainActivity extends AppCompatActivity {
         if (!username.getText().toString().trim().isEmpty()) {
             if (!password.getText().toString().trim().isEmpty()) {
                 login();
-                startActivity(new Intent(this, Index.class));
-                finish();
             } else {
                 password.setError("Campo de contraseña vacío");
             }
@@ -97,6 +95,8 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(@NonNull Call<LoginResult> call, @NonNull Response<LoginResult> response) {
                 if (response.isSuccessful()) {
                     Toast.makeText(MainActivity.this, "Bienvenido", Toast.LENGTH_SHORT).show();
+                    Intent loginIntent = new Intent(MainActivity.this, Index.class);
+                    startActivity(loginIntent);
                 } else {
                     Toast.makeText(MainActivity.this, "Petición denegada", Toast.LENGTH_SHORT).show();
                 }
