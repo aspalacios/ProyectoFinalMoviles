@@ -1,6 +1,7 @@
 package com.momotombodevs.pgalante.bmi_calculator.Api;
 
 import com.momotombodevs.pgalante.bmi_calculator.models.LoginModel;
+import com.momotombodevs.pgalante.bmi_calculator.models.LoginResult;
 import com.momotombodevs.pgalante.bmi_calculator.models.UserModel;
 
 import java.util.ArrayList;
@@ -14,8 +15,8 @@ import retrofit2.http.PUT;
 import retrofit2.http.Path;
 
 public interface ApiInterface {
-    @POST("/users/login")
-    Call<UserModel> login(@Body LoginModel login);
+    @POST("users/login")
+    Call<LoginResult> login(@Body LoginModel body);
 
     @POST("users")
     Call<UserModel> createUser(@Body UserModel user);

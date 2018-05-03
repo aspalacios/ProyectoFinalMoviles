@@ -18,6 +18,7 @@ import com.momotombodevs.pgalante.bmi_calculator.Api.ApiInterface;
 import com.momotombodevs.pgalante.bmi_calculator.R;
 import com.momotombodevs.pgalante.bmi_calculator.adapters.UserAdapter;
 import com.momotombodevs.pgalante.bmi_calculator.models.LoginModel;
+import com.momotombodevs.pgalante.bmi_calculator.models.LoginResult;
 import com.momotombodevs.pgalante.bmi_calculator.models.UserModel;
 import com.momotombodevs.pgalante.bmi_calculator.Api.Api;
 
@@ -29,7 +30,7 @@ import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
-    private UserModel user;
+    private LoginModel loginModel;
     private EditText username;
     private EditText password;
     private String usernameModel;
@@ -42,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
         initializeViews();
         Button btnRegisterLogin = findViewById(R.id.btnRegisterLogin);
         Button btnAccessLogin = findViewById(R.id.btnAccessLogin);
-
 
 
         btnAccessLogin.setOnClickListener(new View.OnClickListener() {
@@ -80,31 +80,30 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void login() {
-        user = new UserModel();
 
-        user.setUsername(username.getText().toString());
-        user.setPassword(username.getText().toString());
         usernameModel = username.getText().toString();
         passwordModel = password.getText().toString();
 
-        LoginModel loginModel = new LoginModel(usernameModel, passwordModel);
-        Call<UserModel> call = Api.instance().login(loginModel);
+        loginModel = new LoginModel(usernameModel, passwordModel);
 
-        call.enqueue(new Callback<UserModel>() {
+        loginModel.setUsername(username.getText().toString());
+        loginModel.setPassword(password.getText().toString());
+
+        Call<LoginResult> call = Api.instance().login(loginModel);
+
+        call.enqueue(new Callback<LoginResult>() {
             @Override
-            public void onResponse(@NonNull Call<UserModel> call, @NonNull Response<UserModel> response) {
+            public void onResponse(@NonNull Call<LoginResult> call, @NonNull Response<LoginResult> response) {
                 if (response.isSuccessful()) {
-                    Toast.makeText(MainActivity.this, response.body().getToken(), Toast.LENGTH_SHORT).show();
-
-                }
-                else {
-                    Toast.makeText(MainActivity.this, "error :(",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, response.body().getId(), Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(MainActivity.this, loginModel.getUsername() + ' ' + loginModel.getPassword(), Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
-            public void onFailure(@NonNull Call<UserModel> call, @NonNull Throwable t) {
-                Toast.makeText(MainActivity.this, "error :)",Toast.LENGTH_SHORT).show();
+            public void onFailure(@NonNull Call<LoginResult> call, @NonNull Throwable t) {
+                Toast.makeText(MainActivity.this, "error :)", Toast.LENGTH_SHORT).show();
             }
         });
 
