@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient"
+    tools:context=".activities.Result">
+
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:text="Tu resultado es el siguiente:"
+        android:textAlignment="center"
+        android:textSize="25dp"
+        android:textColor="@color/colorHint"
+        />
+
+    <TextView
+        android:id="@+id/insertResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="125dp"
+        android:textColor="@color/colorHint"
+        android:textSize="25dp"
+        />
+
+    <TextView
+        android:id="@+id/rankResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="200dp"
+        android:textColor="@color/colorHint"
+        android:text="Tu rango de BMI es:"
+        android:textSize="25dp"
+        />
+
+    <TextView
+        android:id="@+id/insertRank"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="275dp"
+        android:textColor="@color/colorHint"
+        android:textSize="25dp"
+        />
+
+    <TextView
+        android:id="@+id/insertAdvice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="350dp"
+        android:textColor="@color/colorHint"
+        android:textSize="25dp"
+        />
+
+    <Button
+        android:id="@+id/btnRegister"
+        android:layout_width="275dp"
+        android:layout_height="55dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="450dp"
+        android:background="@drawable/button_rounded_corner_second"
+        android:text="Sugerencias de consejos"
+        android:textAllCaps="false"
+        android:textColor="@color/colorHint"
+        />
+        <!--android:onClick="acceptOnclick"-->
+
+</RelativeLayout>
