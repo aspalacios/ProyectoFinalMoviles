@@ -102,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(@NonNull Call<LoginResult> call, @NonNull Throwable t) {
-                Toast.makeText(MainActivity.this, "error :)", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Favor revisa tu conexión", Toast.LENGTH_SHORT).show();
             }
         });
 
