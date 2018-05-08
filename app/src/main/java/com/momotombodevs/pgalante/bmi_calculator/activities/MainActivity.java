@@ -4,25 +4,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.momotombodevs.pgalante.bmi_calculator.Api.ApiInterface;
 import com.momotombodevs.pgalante.bmi_calculator.R;
-import com.momotombodevs.pgalante.bmi_calculator.adapters.UserAdapter;
 import com.momotombodevs.pgalante.bmi_calculator.models.LoginModel;
 import com.momotombodevs.pgalante.bmi_calculator.models.LoginResult;
-import com.momotombodevs.pgalante.bmi_calculator.models.UserModel;
 import com.momotombodevs.pgalante.bmi_calculator.Api.Api;
-
-import java.util.ArrayList;
 
 import retrofit2.Call;
 import retrofit2.Callback;

@@ -19,9 +19,16 @@ public class Index extends AppCompatActivity {
         FloatingActionButton btnDeleteUser = findViewById(R.id.deleteUser);
         FloatingActionButton btnLogout = findViewById(R.id.logout);
 
+        btnEditUser.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intentEditUser = new Intent(Index.this, UpdateUser.class);
+                Index.this.startActivity(intentEditUser);
+            }
+        });
+
         btnLogout.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intentLogin = new Intent(Index.this, Login.class);
+                Intent intentLogin = new Intent(Index.this, MainActivity.class);
                 Index.this.startActivity(intentLogin);
             }
         });

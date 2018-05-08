@@ -38,7 +38,7 @@ public class Register extends AppCompatActivity {
                 if (!email.getText().toString().trim().isEmpty()) {
                     if (!password.getText().toString().trim().isEmpty()) {
                         createUser();
-                        startActivity(new Intent(this, Index.class));
+                        startActivity(new Intent(this, MainActivity.class));
                         finish();
                     } else {
                         password.setError("Campo de contraseña vacío");

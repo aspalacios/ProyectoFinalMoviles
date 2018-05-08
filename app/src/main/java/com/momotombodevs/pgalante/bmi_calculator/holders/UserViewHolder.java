@@ -10,7 +10,6 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.momotombodevs.pgalante.bmi_calculator.activities.DeleteUser;
-import com.momotombodevs.pgalante.bmi_calculator.activities.UpdateUser;
 import com.momotombodevs.pgalante.bmi_calculator.activities.MainActivity;
 import com.momotombodevs.pgalante.bmi_calculator.R;
 
