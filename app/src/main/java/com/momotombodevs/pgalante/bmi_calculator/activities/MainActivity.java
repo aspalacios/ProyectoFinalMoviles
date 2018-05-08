@@ -19,7 +19,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
-
+    private String token;
     private LoginModel loginModel;
     private EditText username;
     private EditText password;
@@ -68,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void login() {
 
+
         usernameModel = username.getText().toString();
         passwordModel = password.getText().toString();
 
@@ -84,6 +85,8 @@ public class MainActivity extends AppCompatActivity {
                 if (response.isSuccessful()) {
                     Toast.makeText(MainActivity.this, "Bienvenido", Toast.LENGTH_SHORT).show();
                     Intent loginIntent = new Intent(MainActivity.this, Index.class);
+                    token = response.body().getId();
+                    loginIntent.putExtra("TOKEN_STRING", token);
                     startActivity(loginIntent);
                 } else {
                     Toast.makeText(MainActivity.this, "Datos Incorrectos", Toast.LENGTH_LONG).show();
