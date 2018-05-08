@@ -15,14 +15,14 @@ public class Index extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_index);
-        FloatingActionButton btnEditUser = findViewById(R.id.editUser);
-        FloatingActionButton btnDeleteUser = findViewById(R.id.deleteUser);
+        FloatingActionButton btnEditUser = findViewById(R.id.deleteUser);
+        FloatingActionButton btnGetAdvices = findViewById(R.id.getAdvices);
         FloatingActionButton btnLogout = findViewById(R.id.logout);
 
-        btnEditUser.setOnClickListener(new View.OnClickListener() {
+        btnGetAdvices.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intentEditUser = new Intent(Index.this, UpdateUser.class);
-                Index.this.startActivity(intentEditUser);
+                Intent intentAdvices = new Intent(Index.this, Advice.class);
+                Index.this.startActivity(intentAdvices);
             }
         });
 

@@ -19,12 +19,15 @@
             </intent-filter>
         </activity>
         <activity android:name=".activities.DeleteUser" />
-        <activity android:name=".activities.Login" />
         <activity android:name=".activities.Register" />
         <activity android:name=".activities.Index" />
         <activity android:name=".activities.Result" />
         <activity android:name=".activities.update_user" />
-        <activity android:name=".activities.UpdateUser"></activity>
+        <activity android:name=".activities.UpdateUser" />
+        <activity android:name=".activities.Advice" />
+        <activity android:name=".activities.CreateAdvice" />
+        <activity android:name=".activities.UpdateAdvice" />
+        <activity android:name=".activities.DeleteAdvice"></activity>
     </application>
 
 </manifest>

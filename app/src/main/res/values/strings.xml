@@ -3,11 +3,10 @@
 
     <string name="action_settings">Settings</string>
     <string name="title_activity_crud">crud</string>
-    <string name="cancel">cancel</string>
-    <string name="accept">accept</string>
-    <string name="first_text_field">First Name</string>
-    <string name="second_text_field">Last Name</string>
-    <string name="third_text_field">Email</string>
-    <string name="fourth_text_field">Password</string>
+    <string name="cancel">Cancelar</string>
+    <string name="accept">Aceptar</string>
+    <string name="first_text_field">Título</string>
+    <string name="second_text_field">Descripción</string>
+    <string name="third_text_field">Categoría</string>
     <string name="title_activity_update_product">UpdateProduct</string>
 </resources>
