@@ -12,7 +12,15 @@
         android:id="@+id/idBody"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+        android:visibility="invisible"/>
+
+    <TextView
+        android:text="Weight: "
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+        />
 
     <TextView
         android:id="@+id/weight"
@@ -21,9 +29,23 @@
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
 
     <TextView
+        android:text="Height: "
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+        />
+
+    <TextView
         android:id="@+id/height"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        />
 
+    <TextView
+        android:text=" "
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+        />
 
 </LinearLayout>
