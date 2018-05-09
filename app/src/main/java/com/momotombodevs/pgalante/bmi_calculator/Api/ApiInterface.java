@@ -1,11 +1,13 @@
 package com.momotombodevs.pgalante.bmi_calculator.Api;
 
 import com.momotombodevs.pgalante.bmi_calculator.models.AdviceModel;
+import com.momotombodevs.pgalante.bmi_calculator.models.BodyModel;
 import com.momotombodevs.pgalante.bmi_calculator.models.LoginModel;
 import com.momotombodevs.pgalante.bmi_calculator.models.LoginResult;
 import com.momotombodevs.pgalante.bmi_calculator.models.UserModel;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -44,5 +46,9 @@ public interface ApiInterface {
 
     @DELETE ("advices/{id}")
     Call<AdviceModel> deleteAdvice (@Path("id") String id);
+
+    @GET("bodies")
+    Call<List<BodyModel>> bodiesAll();
+
 
 }

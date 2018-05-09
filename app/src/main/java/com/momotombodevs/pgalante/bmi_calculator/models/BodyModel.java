@@ -1,6 +1,8 @@
 package com.momotombodevs.pgalante.bmi_calculator.models;
 
-public class BodyModel {
+import io.realm.RealmObject;
+
+public class BodyModel extends RealmObject {
     private String id;
     private String height;
     private String weight;
