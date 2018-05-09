@@ -39,9 +39,18 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="200dp"
         android:textColor="@color/colorHint"
-        android:text="Tu rango de BMI es:"
         android:textSize="25dp"
         />
+
+    <TextView
+        android:id="@+id/visualizeRank"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/rankResult"
+        android:layout_centerHorizontal="true"
+        android:text="Tu rango es:"
+        android:textColor="@color/colorHint"
+        android:textSize="25dp" />
 
     <TextView
         android:id="@+id/insertRank"
@@ -54,28 +63,28 @@
         android:textSize="25dp"
         />
 
-    <TextView
-        android:id="@+id/insertAdvice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="350dp"
-        android:textColor="@color/colorHint"
-        android:textSize="25dp"
-        />
-
     <Button
-        android:id="@+id/btnRegister"
+        android:id="@+id/btnAdvices"
         android:layout_width="275dp"
         android:layout_height="55dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="27dp"
+        android:layout_marginBottom="187dp"
         android:background="@drawable/button_rounded_corner_second"
         android:text="Sugerencias de consejos"
         android:textAllCaps="false"
         android:textColor="@color/colorHint" />
-        <!--android:onClick="acceptOnclick"-->
+
+    <Button
+        android:id="@+id/btnHistory"
+        android:layout_width="275dp"
+        android:layout_height="55dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="101dp"
+        android:background="@drawable/button_rounded_corner"
+        android:text="Historial"
+        android:textAllCaps="false"
+        android:textColor="@color/colorHint" />
 
 </RelativeLayout>

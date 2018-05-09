@@ -9,4 +9,8 @@
     <string name="second_text_field">Descripción</string>
     <string name="third_text_field">Categoría</string>
     <string name="title_activity_update_product">UpdateProduct</string>
+    <string name="peso_inferior_al_menor">Peso Inferior al menor</string>
+    <string name="normal">Normal</string>
+    <string name="peso_superior_al_normal">Peso superior al normal</string>
+    <string name="obesidad">Obesidad</string>
 </resources>

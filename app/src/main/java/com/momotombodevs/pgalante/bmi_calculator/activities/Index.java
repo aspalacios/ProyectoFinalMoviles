@@ -26,7 +26,7 @@ public class Index extends AppCompatActivity {
 
         btnCalculate.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intentBody = new Intent(Index.this, Body.class);
+                Intent intentBody = new Intent(Index.this, Result.class);
                 intentBody.putExtra("Weight", weight.getText().toString());
                 intentBody.putExtra("Height", height.getText().toString());
                 Index.this.startActivity(intentBody);
@@ -39,6 +39,7 @@ public class Index extends AppCompatActivity {
                 Index.this.startActivity(intentAdvices);
             }
         });
+
 
         btnLogout.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
