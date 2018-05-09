@@ -32,16 +32,16 @@ public class CreateAdvice extends AppCompatActivity {
 
     private void validateData() {
 
-        if (!title.getText().toString().trim().isEmpty()) {
-            if (!description.getText().toString().trim().isEmpty()) {
-                createAdvice();
-                startActivity(new Intent(this, MainActivity.class));
-                finish();
-            } else {
-                description.setError("Este campo no puede ir en blanco");
-            }
-        } else {
+        if (!title.getText().toString().trim().isEmpty() && !description.getText().toString().trim().isEmpty() && !category.getText().toString().trim().isEmpty()) {
+            createAdvice();
+            startActivity(new Intent(this, Advice.class));
+            finish();
+        } else if (title.getText().toString().trim().isEmpty()) {
             title.setError("Este campo no puede ir en blanco");
+        } else if (description.getText().toString().trim().isEmpty()) {
+            description.setError("Este campo no puede ir en blanco");
+        } else if (category.getText().toString().trim().isEmpty()) {
+            category.setError("Este campo no puede ir en blanco");
         }
     }
 

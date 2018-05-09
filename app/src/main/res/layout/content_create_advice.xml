@@ -25,7 +25,8 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="@string/first_text_field"
-            android:inputType="text" />
+            android:inputType="text"
+            android:textColor="@color/colorHint"/>
 
         <EditText
             android:id="@+id/ETdescription"
@@ -34,7 +35,8 @@
             android:layout_marginTop="10dp"
             android:ems="10"
             android:hint="@string/second_text_field"
-            android:inputType="text" />
+            android:inputType="text"
+            android:textColor="@color/colorHint"/>
 
         <EditText
             android:id="@+id/ETcategory"
@@ -43,7 +45,8 @@
             android:layout_marginTop="10dp"
             android:ems="10"
             android:hint="@string/third_text_field"
-            android:inputType="text" />
+            android:inputType="text"
+            android:textColor="@color/colorHint"/>
 
         <LinearLayout
             android:layout_width="match_parent"

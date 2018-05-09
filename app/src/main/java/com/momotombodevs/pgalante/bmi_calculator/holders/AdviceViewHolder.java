@@ -53,9 +53,9 @@ public class AdviceViewHolder extends RecyclerView.ViewHolder implements View.On
             case R.id.btnEdit:
                 intent = new Intent(context, UpdateAdvice.class);
                 intent.putExtra("Id", id.getText().toString());
-                intent.putExtra("Título", title.getText().toString());
-                intent.putExtra("Descripción", description.getText().toString());
-                intent.putExtra("Categoría", description.getText().toString());
+                intent.putExtra("Title", title.getText().toString());
+                intent.putExtra("Description", description.getText().toString());
+                intent.putExtra("Category", category.getText().toString());
                 context.startActivity(intent);
                 break;
         }
