@@ -1,8 +1,11 @@
 package com.momotombodevs.pgalante.bmi_calculator.activities;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -21,7 +24,21 @@ public class Result extends AppCompatActivity {
         setContentView(R.layout.activity_result);
         result = findViewById(R.id.insertResult);
         range = findViewById(R.id.insertRank);
+        Button btnHistory = findViewById(R.id.btnHistory);
+        Button btnAdvices = findViewById(R.id.btnAdvices);
         getExtras();
+        btnAdvices.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intentAdvices = new Intent(Result.this, Advice.class);
+                Result.this.startActivity(intentAdvices);
+            }
+        });
+        btnHistory.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intentBody = new Intent(Result.this, Body.class);
+                Result.this.startActivity(intentBody);
+            }
+        });
     }
 
     private void getExtras() {
