@@ -1,4 +1,4 @@
-package com.momotombodevs.pgalante.bmi_calculator.adapters;
+    package com.momotombodevs.pgalante.bmi_calculator.adapters;
 
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -59,7 +59,7 @@ public class BodiesAdapter extends RecyclerView.Adapter<BodiesAdapter.ViewHolder
 
         holder.id.setText(bodyModel.getId());
         holder.height.setText(bodyModel.getHeight());
-        holder.weight.setText(String.valueOf(bodyModel.getWeight()));
+        holder.weight.setText(bodyModel.getWeight());
 
     }
 
