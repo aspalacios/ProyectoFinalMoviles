@@ -22,12 +22,12 @@
         <activity android:name=".activities.Register" />
         <activity android:name=".activities.Index" />
         <activity android:name=".activities.Result" />
-        <activity android:name=".activities.update_user" />
         <activity android:name=".activities.Advice" />
         <activity android:name=".activities.CreateAdvice" />
         <activity android:name=".activities.UpdateAdvice" />
         <activity android:name=".activities.DeleteAdvice" />
         <activity android:name=".activities.Body" />
+        <activity android:name=".activities.ShowAdvice" />
     </application>
 
 </manifest>

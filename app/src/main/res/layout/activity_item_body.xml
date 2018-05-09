@@ -16,8 +16,9 @@
         android:visibility="invisible"/>
 
     <TextView
-        android:text="Weight: "
+        android:text="Peso: "
         android:layout_width="match_parent"
+        android:textColor="@color/colorHint"
         android:layout_height="wrap_content"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
         />
@@ -26,18 +27,21 @@
         android:id="@+id/weight"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@color/colorHint"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
 
     <TextView
-        android:text="Height: "
+        android:text="Altura: "
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@color/colorHint"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
         />
 
     <TextView
         android:id="@+id/height"
         android:layout_width="match_parent"
+        android:textColor="@color/colorHint"
         android:layout_height="wrap_content"
         />
 

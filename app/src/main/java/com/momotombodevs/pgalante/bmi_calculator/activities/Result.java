@@ -1,6 +1,7 @@
 package com.momotombodevs.pgalante.bmi_calculator.activities;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,9 +10,18 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.momotombodevs.pgalante.bmi_calculator.Api.Api;
 import com.momotombodevs.pgalante.bmi_calculator.R;
+import com.momotombodevs.pgalante.bmi_calculator.models.AdviceModel;
+import com.momotombodevs.pgalante.bmi_calculator.models.BodyModel;
+
+import io.realm.Realm;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class Result extends AppCompatActivity {
+    private BodyModel bodyModel;
     private TextView result;
     private TextView range;
     private String height;
@@ -27,9 +37,10 @@ public class Result extends AppCompatActivity {
         Button btnHistory = findViewById(R.id.btnHistory);
         Button btnAdvices = findViewById(R.id.btnAdvices);
         getExtras();
+        createBodyModel();
         btnAdvices.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intentAdvices = new Intent(Result.this, Advice.class);
+                Intent intentAdvices = new Intent(Result.this, ShowAdvice.class);
                 Result.this.startActivity(intentAdvices);
             }
         });
@@ -72,5 +83,37 @@ public class Result extends AppCompatActivity {
         }
         result.setText(String.valueOf(bmi));
         range.setText(bmilabel);
+    }
+
+    public void createBodyModel() {
+        bodyModel = new BodyModel();
+
+        bodyModel.setHeight(height);
+        bodyModel.setWeight(weight);
+
+        Call<BodyModel> call = Api.instance().createBodyModel(bodyModel);
+        call.enqueue(new Callback<BodyModel>() {
+            @Override
+            public void onResponse(@NonNull Call<BodyModel> call, @NonNull Response<BodyModel> response) {
+                if (response.body() != null) {
+                    try {
+
+                        assert response != null;
+                        assert response.body() != null;
+                        Realm realm = Realm.getDefaultInstance();
+                        realm.beginTransaction();
+                        realm.commitTransaction();
+
+                    } catch (NullPointerException e) {
+                        Log.i("Debug: ", e.getMessage());
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<BodyModel> call, @NonNull Throwable t) {
+                Log.i("Debug: ", t.getMessage());
+            }
+        });
     }
 }

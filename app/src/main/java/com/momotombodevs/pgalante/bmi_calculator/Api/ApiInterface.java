@@ -26,15 +26,6 @@ public interface ApiInterface {
     @POST("users/login")
     Call<LoginResult> login(@Body LoginModel body);
 
-    @GET("users/{id}")
-    Call<UserModel> getUser(@Header("Authorization") String token, @Body UserModel user);
-
-    @PUT("users/{id}")
-    Call<UserModel> updateUser(@Header("Authorization") String token, @Path("id") String id);
-
-    @DELETE("users/{id}")
-    Call<UserModel> deleteUser(@Path("id") String id);
-
     @GET ("advices")
     Call<ArrayList<AdviceModel>> getAdvices();
 
@@ -50,5 +41,6 @@ public interface ApiInterface {
     @GET("bodies")
     Call<List<BodyModel>> bodiesAll();
 
-
+    @POST("bodies")
+    Call<BodyModel> createBodyModel(@Body BodyModel bodyModel);
 }

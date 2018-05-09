@@ -79,8 +79,6 @@ public class CreateAdvice extends AppCompatActivity {
                 Log.i("Debug: ", t.getMessage());
             }
         });
-
-
     }
 
     public void acceptOnclick(View view) {
